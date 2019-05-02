@@ -75,10 +75,8 @@ class FlashcardScreen {
     createDeck(event) {
         this.flashcards = [];
         const flashcardContainer = document.querySelector('#flashcard-container');
-        if (this.title === null) {
+        if (this.title === null)
             this.title = event.detail.title;
-            // console.log(this.title);
-        }
         let index = null;
         for (let i = 0; i < FLASHCARD_DECKS.length; i++) {
             if (this.title.includes(FLASHCARD_DECKS[i].title)) {
@@ -91,7 +89,6 @@ class FlashcardScreen {
             const card = new Flashcard(flashcardContainer, key, deck.words[key]);
             this.flashcards.push(card);
         }
-        // console.log(this.flashcards);
         this.chooseCard(0);
     }
 
